@@ -6,16 +6,16 @@ author: emma_patricios
 categories:
   - Quick Tips
 further_reading:
-  - url:
-    title:
-    source:
+  - url: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+    title: "<a>: The Anchor element"
+    source: MDN web docs
 ---
 
-It is a simple element in use on almost every site on the web, however it can also be easy to create links that are not accessible to many people.
+It is a simple element in use on almost every site on the web, however it can also be easy to create links that are not accessible to all.
 
 ## Start with valid HTML
 
-In order for an `<a>` to be valid HTML it must have:
+In order for `<a>` to be valid HTML it must have:
 
 * an `href` attribute: the location of the anchor, page or resource
 * link content: text describing where the link is going, this could be plain text or an <a href="https://a11yproject.com/posts/alt-text/
@@ -58,8 +58,13 @@ Ultimately, do not use the `title` attribute on `<a>` elements.
 Some developers/designers see the focus outline of links as ugly and remove them.
 People navigating using the keyboard require this focus state to keep track of where they are. Best practice is to <a href="https://a11yproject.com/posts/never-remove-css-outlines/">never remove CSS outlines</a> however there are accessible solutions to styling.
 
-A link can be activated by pressing the <kbd>Enter</kbd> key, so be mindful
+The `<a>` element as standard can be activated by pressing the <kbd>Enter</kbd> key, so be mindful if you are attaching scripting not to override this functionality.
 
 ## When an `<a>` is not suitable
 
-A link with no `href` and scripting attached via the `onclick` attribute or listeners. This is most likely doing an action on the same page, such as opening a menu or toggling content and as such should be replaced with the `<button>` element.
+If you have an `<a>` element that has:
+
+*  an empty or no `href` attribute
+* scripting attached via the `onclick` attribute or listeners
+
+This will probably be triggering an action on the same page, such as opening a menu or toggling content and as such is a much better candidate for the `<button>` element.
